@@ -7,7 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Bell, MessageSquare, Settings, Send, Trash, Archive } from 'lucide-react'
 import Confetti from 'react-confetti'
 
-// Define the Email type
+
 type Email = {
   id: number;
   from: string;
@@ -62,7 +62,7 @@ const sampleEmails: Email[] = [
 
 export default function OutlookStylePhishingGame() {
   const [emails, setEmails] = useState<Email[]>(sampleEmails);
-  const [currentEmail, setCurrentEmail] = useState<Email | null>(null); // Allow null or an Email object
+  const [currentEmail, setCurrentEmail] = useState<Email | null>(null); 
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
@@ -72,7 +72,7 @@ export default function OutlookStylePhishingGame() {
       setCurrentEmail(emails[0]);
     } else {
       setGameOver(true);
-      if (score >= 4) {  // 80% pass rate
+      if (score >= 4) {  
         setShowConfetti(true);
       }
     }
@@ -90,7 +90,7 @@ export default function OutlookStylePhishingGame() {
     setScore(0);
     setGameOver(false);
     setShowConfetti(false);
-    setCurrentEmail(null); // Reset the current email
+    setCurrentEmail(null); 
   };
 
   if (gameOver) {
